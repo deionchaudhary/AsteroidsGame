@@ -2,6 +2,7 @@
 Star []sue;
 Spaceship john = new Spaceship();
 ArrayList <Asteroid> ben = new ArrayList <Asteroid>();
+ArrayList <Bullet> adam = new ArrayList <Bullet>();
 public void setup() 
 {
   size(500,500);
@@ -29,6 +30,22 @@ public void draw()
       ben.remove(i);
     }
   }
+  
+  fill(23, 232, 232);
+    for(int i = 0; i < adam.size(); i++) {
+      adam.get(i).move();
+    adam.get(i).show();
+//reinitialize the myPoitnDirection.
+     for (int a = 0; a < ben.size(); a++) {
+       float b = dist((float)ben.get(a).getX(), (float)ben.get(a).getY(),(float)adam.get(i).getX(), (float)adam.get(i).getY());
+    if (b<10) {
+      adam.remove(i);
+      ben.remove(a);
+      break;
+    }
+    }
+    }
+    //keep experimenting with break;, not here.
   //noStroke();
   if(keyPressed) {
   if (key =='a' || key =='A') {
@@ -45,6 +62,9 @@ public void draw()
   }
   if (key == 'r' || key == 'R') {
     john.hyperspace();
+  }
+   if (key == ' ') {
+     adam.add(new Bullet(john));
   }
   }
   john.move();
