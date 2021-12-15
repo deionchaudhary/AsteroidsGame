@@ -24,4 +24,22 @@ class Spaceship extends Floater
     public double getY () {
       return myCenterY;
     }
+    public double getXspeed () {
+      return myXspeed;
+    }
+    public double getYspeed () {
+      return myXspeed;
+    }
+    public double getPointDirection () {
+      return myPointDirection;
+    }
 }
+    /*public void show () {
+    line(xCorners[0],yCorners[0], xCorners[1], yCorners[1]);
+    line(xCorners[0],yCorners[0], xCorners[2], yCorners[2]);
+    line(xCorners[1],yCorners[1], xCorners[3], yCorners[3]);
+    line(xCorners[2],yCorners[2], xCorners[4], yCorners[4]);
+    line(xCorners[3],yCorners[3], xCorners[5], yCorners[5]);
+    line(xCorners[4],yCorners[4], xCorners[6], yCorners[6]);
+    line(xCorners[5],yCorners[7], xCorners[1], yCorners[1]);
+} don't need show apparently*/
